@@ -285,6 +285,6 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Source Code",
-    href: "#",
+    href: "https://github.com/eldoraboo/scales-io",
   },
 ];
