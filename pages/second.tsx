@@ -96,16 +96,16 @@ export default function PianoKeyboard(props: any) {
   ];
 
   return (
-    <SimpleGrid px={12} height="300px" templateColumns='repeat(25, minmax(6.65%, 1fr))' mb={10}>
+    <SimpleGrid px={12} height="20vw" templateColumns='repeat(25, minmax(6.65%, 1fr))' mb={10}>
     {notes.map((note) => (
         <Card align='center'
         key={note.key}
-        height={note.black ? "60%" : "100%"}
+        height={note.black ? "12vw" : "20vw"}
         variant={note.black ? "filled" : "outline"}
         width={note.black ? "70%" : "100%"}
+        pt={note.black ? "8vw" : "10vw"}
         right={note.left}
-        pt={note.black ? "80px" : "200px"}
-        fontSize={note.black ? "80%" : ""}
+        fontSize={note.black ? "0.5em" : "1em"}
         bg={
           keyList?.includes(note.key)
             ? note.black
@@ -117,16 +117,11 @@ export default function PianoKeyboard(props: any) {
               : "white"
             : ""
         }>  
-          <CardHeader>
-          
-          </CardHeader>
-          <CardBody>
-          </CardBody>
-          <CardFooter>
+
           {note.value.slice(3,5)}
           <br></br>
           {note.value.slice(0,2)}
-          </CardFooter>
+ 
         </Card>
           ))}      
   </SimpleGrid>
