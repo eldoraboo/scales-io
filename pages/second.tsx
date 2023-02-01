@@ -80,50 +80,51 @@ export default function PianoKeyboard(props: any) {
     { key: 4, left: "435%", black: true, value: "G♯/A♭" },
     { key: 5.5, left: "400%", value: "B" },
     { key: 5, left: "535%", black: true, value: "A♯/B♭" },
-    { key: 6, left:"500%", value: "C" },
-    { key: 7, left:"500%", value: "D" },
+    { key: 6, left: "500%", value: "C" },
+    { key: 7, left: "500%", value: "D" },
     { key: 6.5, left: "635%", black: true, value: "C♯/D♭" },
-    { key: 8, left:"600%", value: "E" },
+    { key: 8, left: "600%", value: "E" },
     { key: 7.5, left: "735%", black: true, value: "D♯/E♭" },
     { key: 8.5, left: "700%", value: "F" },
     { key: 9.5, left: "700%", value: "G" },
     { key: 9, left: "835%", black: true, value: "F♯/G♭" },
-    { key: 10.5, left:"800%", value: "A" },
+    { key: 10.5, left: "800%", value: "A" },
     { key: 10, left: "935%", black: true, value: "G♯/A♭" },
     { key: 11.5, left: "900%", value: "B" },
-    { key: 11, left:"1035%", black: true, value: "A♯/B♭" },
-    { key: 12, left:"1000%", value: "C" },
+    { key: 11, left: "1035%", black: true, value: "A♯/B♭" },
+    { key: 12, left: "1000%", value: "C" },
   ];
 
   return (
-    <SimpleGrid px={12} height="20vw" templateColumns='repeat(25, minmax(6.65%, 1fr))' mb={10}>
-    {notes.map((note) => (
-        <Card align='center'
-        key={note.key}
-        height={note.black ? "12vw" : "20vw"}
-        variant={note.black ? "filled" : "outline"}
-        width={note.black ? "70%" : "100%"}
-        pt={note.black ? "8vw" : "10vw"}
-        right={note.left}
-        fontSize={note.black ? "0.5em" : "1em"}
-        bg={
-          keyList?.includes(note.key)
-            ? note.black
-              ? "rgba(237,100,166,1)"
-              : "rgba(237,100,166,0.5)"
-            : note.black
-            ? colorMode === "light"
-              ? "gray.800"
-              : "white"
-            : ""
-        }>  
-
-          {note.value.slice(3,5)}
-          <br></br>
-          {note.value.slice(0,2)}
- 
-        </Card>
-          ))}      
-  </SimpleGrid>
+    <SimpleGrid
+      px={12}
+      height="20vw"
+      templateColumns="repeat(25, minmax(6.65%, 1fr))"
+      mb={10}
+    >
+      {notes.map((note) => (
+        <Card
+          align="center"
+          key={note.key}
+          height={note.black ? "12vw" : "20vw"}
+          variant={note.black ? "filled" : "outline"}
+          width={note.black ? "70%" : "100%"}
+          pt={note.black ? "8vw" : "10vw"}
+          right={note.left}
+          fontSize={note.black ? "0.5em" : "1em"}
+          bg={
+            keyList?.includes(note.key)
+              ? note.black
+                ? "rgba(237,100,166,1)"
+                : "rgba(237,100,166,0.5)"
+              : note.black
+              ? colorMode === "light"
+                ? "gray.800"
+                : "white"
+              : ""
+          }
+        ></Card>
+      ))}
+    </SimpleGrid>
   );
 }
