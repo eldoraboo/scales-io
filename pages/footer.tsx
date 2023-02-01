@@ -2,7 +2,8 @@ import {
   ButtonGroup,
   Container,
   IconButton,
-  Stack,
+  Flex,
+  Spacer,
   Text,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -30,29 +31,26 @@ const Logo = (props: any) => {
 
 export default function SmallWithLogoLeft() {
   return (
-  <Container as="footer" role="contentinfo" py={{ base: "12", md: "16" }}>
-    <Stack spacing={{ base: "4", md: "5" }}>
-      <Stack justify="space-between" direction="row" align="center">
-        <Logo />
+    <Container as="footer" role="contentinfo" py={{ base: "12", md: "16" }}>
+      <Flex px={10}>
+        <Text fontSize="sm" color="subtle">
+          &copy; {new Date().getFullYear()} Eldora Boo. All rights reserved.
+        </Text>
+        <Spacer />
         <ButtonGroup variant="ghost">
           <IconButton
             as="a"
-            href="#"
+            href="https://www.linkedin.com/in/eldoraboo/"
             aria-label="LinkedIn"
             icon={<FaLinkedin fontSize="1.25rem" />}
           />
           <IconButton
             as="a"
-            href="#"
+            href="https://www.github.com/eldoraboo/"
             aria-label="GitHub"
             icon={<FaGithub fontSize="1.25rem" />}
           />
         </ButtonGroup>
-      </Stack>
-      <Text fontSize="sm" color="subtle">
-        &copy; {new Date().getFullYear()} Eldora Boo. All rights
-        reserved.
-      </Text>
-    </Stack>
-  </Container>
-)};
+      </Flex>
+    </Container>
+  );};
