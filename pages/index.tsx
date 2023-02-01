@@ -23,7 +23,7 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import WithSubnavigation from "./header";
-import PianoKeyboard from "./piano";
+import PianoKeyboard from "./second";
 import { useState, useEffect } from "react";
 import SmallWithLogoLeft from "./footer";
 
@@ -226,6 +226,9 @@ export default function Home() {
               selectedKey={selectedKey}
               selectedOption={selectedOption}
             />
+            <footer>
+            <SmallWithLogoLeft/>
+            </footer>
         </body>
       </html>
     </>
